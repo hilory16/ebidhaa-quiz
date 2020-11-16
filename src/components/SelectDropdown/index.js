@@ -25,7 +25,7 @@ const Wrapper = styled.div`
 `
 export default function index({img, children, value, changeHandler}) {
     return (
-        <Wrapper className="d-flex align-items-center">
+        <Wrapper className="d-flex align-items-center select-container">
             <span><img src={img} alt="" /></span>
             <select value={value} onChange={e => changeHandler(e.target.value)}>
                 {children}

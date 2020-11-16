@@ -10,8 +10,12 @@ import FoodItem from '../../components/FoodItem';
 import PopularSlider from '../../components/PopularSlider'
 import AppStore from '../../components/AppStore';
 import Offers from '../../components/Offers';
-import Category from '../../components/Category'
+import Category from '../../components/Category';
+import CartModal from '../../components/CartModal'
 export default class Index extends Component {
+    state={
+        showModal:false
+    }
     data =[
         {
             img:require('../../assets/images/beef.jpg'),
@@ -38,16 +42,20 @@ export default class Index extends Component {
             price:"7,670.00"
         }
     ]
-    
+    handleModal = (status) =>{
+        this.setState({
+            showModal:status
+        })
+    }
     render(){
+        console.log(this.state.showModal)
         return (
             <div>
                 <UI.Wrapper>
                     <Banner/>
                     <section className="popular">
-                        <PopularSlider data={this.data}/>
+                        <PopularSlider data={this.data} handleModal={() => this.handleModal(true)}/>
                     </section>
-
                     <section className="categories pb-0">
                         <div className="container">
                             <div className="d-flex justify-content-between align-items-center heading">
@@ -122,11 +130,13 @@ export default class Index extends Component {
                     </section>
 
                     <section className="popular-slider-2">
-                        <PopularSlider data={this.data} mini/>
+                        <PopularSlider data={this.data} mini handleModal={() => this.handleModal(true)}/>
                     </section>
 
                     <Footer/>
-                    
+                    <div>
+                       {this.state.showModal ? <CartModal handleModal={() => this.handleModal(false)}/> : null} 
+                    </div>
                 </UI.Wrapper>
             </div>
         )

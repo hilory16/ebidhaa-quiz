@@ -89,7 +89,7 @@ export default function Index({half}) {
     useEffect(() =>{
 
     },[])
-    console.log(showNav)
+    // console.log(showNav)
     return (
         <Wrapper >
             <div className=" header-content align-items-center d-flex" style={{background:sticky ?" rgba(30,12,45,0)" :""}}>

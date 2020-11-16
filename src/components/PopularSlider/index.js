@@ -39,11 +39,12 @@ export default class Index extends Component {
     };
     renderItem = () =>{
         return this.props.data ? this.props.data.map((item, i) =>(
-            <FoodItem data={item} key={i}/>
+            <FoodItem data={item} key={i} handleModal={() => this.props.handleModal()}/>
         ))
         :null
     }
     render() {
+        console.log(this.props)
         return (
             <Wrapper>
                 <div className="container">

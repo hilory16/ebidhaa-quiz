@@ -90,7 +90,7 @@ const Wrapper = styled.div`
 
 
 
-export default function Index({data}) {
+export default function Index({data, handleModal}) {
     const {img,heading,desc,price} = data
     return (
         <Wrapper className="popular-item">
@@ -104,7 +104,7 @@ export default function Index({data}) {
                             <div className="d-flex meta align-items-center justify-content-between actions">
                                 <p className="mb-0 price">₦ {price} </p>
                                 <div className="line"></div>
-                                <p className="mb-0 add-to-cart">Add to Cart</p>
+                                <p className="mb-0 add-to-cart" onClick={() => handleModal()}>Add to Cart</p>
                             </div>
                         </div>
                     </div>
