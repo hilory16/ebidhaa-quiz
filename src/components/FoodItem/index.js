@@ -81,6 +81,11 @@ const Wrapper = styled.div`
         margin-right:10px;
         
     }
+    @media (max-width:320px){
+        .popular-content .text h6{
+            font-size:18px !important;
+        }
+    }
 `
 
 
