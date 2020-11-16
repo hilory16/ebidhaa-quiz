@@ -24,21 +24,56 @@ a:hover{
 .sticky + .content {
     padding-top: 102px;
   }
-.container{
+/* .container{
     padding-left:40px !important;
     padding-right:40px !important;
-}
+} */
 .button{
     background: #000;
     color:#fff;
 }
-@media (min-width:1600px){
+/* @media (min-width:100px){
     .container{
-        max-width:1400px;
-        padding-left:0 !important;
-        padding-right:0 !important;
+        padding-left:15px !important;
+        padding-right:15px !important;
+    }
+} */
+/* @media (min-width:501px){
+    .container{
+        padding-left:30px !important;
+        padding-right:30px !important;
+    }
+} */
+@media (min-width:1200px){
+    .container{
+        max-width:100%;
+        padding-left:50px;
+        padding-right:50px ;
     }
 }
+@media (min-width: 768px){
+    
+    .container {
+        max-width:100%;
+        padding-left:50px;
+        padding-right:50px ;
+    }
+}
+@media (min-width: 576px){
+    .container {
+        max-width: 100%;
+        padding-left:50px;
+        padding-right:50px ;
+    }
+}
+
+/* @media (min-width:1600px){
+    .container{
+        max-width:1500px;
+        padding-left:0 ;
+        padding-right:0;
+    }
+} */
 /* @media (min-width:1500px){
     .container{
         max-width:100%;
@@ -54,23 +89,6 @@ a:hover{
        padding-right:90px !important;
     }
 } */
-@media (max-width:1599px){
-    .container{
-        max-width:100%;
-        padding-left:50px !important;
-        padding-right:50px !important;
-    }
-}
-@media (max-width:1100px){
-    .container{
-        padding-left:30px !important;
-        padding-right:30px !important;
-    }
-}
 
-@media (max-width:500px){
-    .container{
-        padding-left:15px !important;
-        padding-right:15px !important;
-    }
-}
+
+

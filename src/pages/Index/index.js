@@ -3,14 +3,14 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import * as UI from './style';
 import Banner from '../../components/Banner';
-// import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import 'react-toastify/dist/ReactToastify.css';
 import Slider from "react-slick";
 import FoodItem from '../../components/FoodItem';
 import PopularSlider from '../../components/PopularSlider'
 import AppStore from '../../components/AppStore';
-import Offers from '../../components/Offers'
+import Offers from '../../components/Offers';
+import Category from '../../components/Category'
 export default class Index extends Component {
     data =[
         {
@@ -43,13 +43,12 @@ export default class Index extends Component {
         return (
             <div>
                 <UI.Wrapper>
-                    {/* <Header/> */}
                     <Banner/>
                     <section className="popular">
                         <PopularSlider data={this.data}/>
                     </section>
 
-                    <section className="categories">
+                    <section className="categories pb-0">
                         <div className="container">
                             <div className="d-flex justify-content-between align-items-center heading">
                                 <h3 className="mb-0">Our Categories</h3>
@@ -58,75 +57,71 @@ export default class Index extends Component {
 
                             <div className="categories-content">
                                 <div className="row">
-                                    <div className="col-lg-3">
+                                    <div className="col-xl-3 mb-4 mb-xl-0 col-md-6">
                                         <Link to="/">
-                                            <div className="category-item d-flex align-items-center justify-content-center" style={{backgroundImage:`linear-gradient(360deg, rgba(56, 56, 56, 0.5) -22.58%, rgba(84, 84, 84, 0) 197.58%), url(${require('../../assets/images/breakfast.jpg')})`}}>
-                                                    <h6>Breakfast Foods</h6>
-                                            </div>
+                                            <Category type="Breakfast Foods" bg={require('../../assets/images/breakfast.jpg')}/>
                                         </Link>
                                     </div>
 
-                                    <div className="col-lg-3">
+                                    <div className="col-xl-3 mb-4 mb-xl-0 col-md-6">
                                         <Link to="">
-                                            <div className="category-item d-flex align-items-center justify-content-center" style={{backgroundImage:`linear-gradient(360deg, rgba(56, 56, 56, 0.5) -22.58%, rgba(84, 84, 84, 0) 197.58%), url(${require('../../assets/images/fastfoods.jpg')})`}}>
-                                                    <h6>Fast Foods</h6>
-                                            </div>
+                                            <Category type="Fast Foods" bg={require('../../assets/images/fastfoods.jpg')}/>
                                         </Link> 
                                     </div>
 
-                                    <div className="col-lg-3">
+                                    <div className="col-xl-3 mb-4 mb-xl-0 col-md-6">
                                         <Link to="">
-                                            <div className="category-item d-flex align-items-center justify-content-center" style={{backgroundImage:`linear-gradient(360deg, rgba(56, 56, 56, 0.5) -22.58%, rgba(84, 84, 84, 0) 197.58%), url(${require('../../assets/images/pizzas.jpg')})`}}>
-                                                    <h6>Pizzas</h6>
+                                            <Category type="Pizzas" bg={require('../../assets/images/pizzas.jpg')}/>
+                                        </Link>
+                                    </div>
+
+                                    <div className="col-xl-3 mb-4 mb-xl-0 col-md-6">
+                                        <Link to="">
+                                            <Category type="Beef Soups" bg={require('../../assets/images/beef.jpg')}/>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section className="download">
+                        <div className="container">
+                            <div className="d-flex align-items-center mx-auto download-content flex-wrap">
+                                <div className="d-flex comp-app">
+                                    <div className="bell d-flex align-items-center justify-content-center">
+                                        <img src={require('../../assets/images/bell-white.svg')} alt="" className=""/>
+                                    </div>
+                                    <h3 className="mb-0">Get our App!</h3>
+                                </div>
+
+                                <div className="store-links">
+                                    <div className="d-flex align-items-center">
+                                        <Link to="">
+                                            <div className=" store-container appstore">
+                                                <AppStore type="Appstore"/>
+                                            </div>
+                                        </Link>
+
+                                        <Link to="">
+                                            <div className=" store-container mr-0 appstore">
+                                                <AppStore type="Playstore"/>
                                             </div>
                                         </Link>
                                     </div>
-
-                                    <div className="col-lg-3">
-                                        <Link to="">
-                                            <div className="category-item d-flex align-items-center justify-content-center" style={{backgroundImage:`linear-gradient(360deg, rgba(56, 56, 56, 0.5) -22.58%, rgba(84, 84, 84, 0) 197.58%), url(${require('../../assets/images/beef.jpg')})`}}>
-                                                    <h6>Beef Soups</h6>
-                                            </div> 
-                                        </Link>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                    <section className="download pt-0">
-                        <div className="container">
-                            <div className="d-flex align-items-center mx-auto download-content">
-                                <div className="bell d-flex align-items-center justify-content-center">
-                                    <img src={require('../../assets/images/bell-white.svg')} alt="" className=""/>
-                                </div>
-                                <h3 className="mb-0">Get our App!</h3>
-                                <div className="d-flex align-items-center">
-                                    <Link to="">
-                                        <div className=" store-container appstore">
-                                            <AppStore type="Appstore"/>
-                                        </div>
-                                    </Link>
-
-                                    <Link to="">
-                                        <div className=" store-container appstore">
-                                            <AppStore type="Playstore"/>
-                                        </div>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section className="pt-0 offers">
+                    <section className="pt-0 pb-0 offers">
                         <div className="heading container">
                             <h3 className="mb-0">Offers</h3>
                         </div>
                         <Offers/>
-                        
                     </section>
 
-                    <section className="">
+                    <section className="popular-slider-2">
                         <PopularSlider data={this.data} mini/>
                     </section>
 

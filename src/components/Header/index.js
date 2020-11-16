@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {Link, NavLink} from 'react-router-dom';
 
 const Wrapper = styled.div`
-    // position:fixed;
+    position:relative;
     transition:all ease .3s;
     top:0;
     left:0;
@@ -56,13 +56,14 @@ const Wrapper = styled.div`
     @media (max-width:991px){
         
         .nav-bar{
-            background:#1E0C2D;
+            background:#fff;
             position:fixed;
             top:0;
             left:-100%;
             height:100vh;
             width:50%;
             transition:all ease .3s;
+            padding:20px;
         }
         .nav-bar.show{
             left:0;
@@ -77,18 +78,18 @@ const Wrapper = styled.div`
 export default function Index({half}) {
     const [sticky, setSticky] = useState(false)
     const [showNav, setShowNav] = useState(false)
-    window.addEventListener('scroll', () =>{
-        if(window.pageYOffset > "50"){
-            setSticky(true)
-        }else{
-            setSticky(false)
-        }
-    })
+    // window.addEventListener('scroll', () =>{
+    //     if(window.pageYOffset > "50"){
+    //         setSticky(true)
+    //     }else{
+    //         setSticky(false)
+    //     }
+    // })
 
     useEffect(() =>{
 
     },[])
-
+    console.log(showNav)
     return (
         <Wrapper >
             <div className=" header-content align-items-center d-flex" style={{background:sticky ?" rgba(30,12,45,0)" :""}}>
@@ -103,6 +104,10 @@ export default function Index({half}) {
                         </div>
                         
                         <div className={`col-lg-6 nav-bar ${showNav ? 'show' : ''}`}>
+                            <div className="mb-3 d-lg-none d-flex justify-content-end">
+                                <img src={require(`../../assets/images/cancel.svg`)} alt="close" className="menu"  onClick={() => setShowNav(!showNav)}/>
+                            </div>
+                            
                             <div className="d-lg-flex align-items-center justify-content-end nav-menu">
                                 <a href=""><p className="mb-0 button">Sign in</p></a>
                             </div>

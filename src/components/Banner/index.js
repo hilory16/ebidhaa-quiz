@@ -49,16 +49,56 @@ const Wrapper = styled.div`
     }
 
     @media (max-width:991px){
-        
+        .select {
+            width: 70%;
+            margin-right: 16px;
+        }
+        .delivery-time {
+            width: 43%;
+            margin-right: 16px;
+        }
+        .get-food {
+            white-space:nowrap;
+        }
     }
     @media (max-width:767px){
-        
+        .big-text {
+            font-size: 42px;
+            line-height: 48px;
+        }
     }
     @media (max-width:500px){
-        
+        .content {
+            transform: translateY(-14%);
+        }
+        .select {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom:20px;
+        }
+        .delivery-time {
+            width: 100%;
+            margin-right: 0;
+        }
+        .options{
+            flex-wrap:wrap;
+        }
     }
-    @media (max-width:320px){
-        
+    @media (max-width:360px){
+        .logo-text{
+            font-size: 29px;
+            line-height: 28px;
+        }
+    }
+    @media (max-width:340px){
+        .logo-text{
+            font-size: 26px;
+            line-height: 28px;
+        }
+        .big-text {
+            font-size: 38px;
+            line-height: 43px;
+        }
     }
 `;
 
@@ -74,20 +114,23 @@ export default function Index(props) {
                     <div className="w-100">
                         <h2 className="big-text">What are you eating Today?</h2>
                         <div className="order">
-                            <div className=" d-flex align-items-center">
-                                <div className="select d-flex align-items-center">
-                                    <SelectDropdown img={require(`../../assets/images/location.svg`)} value={location} changeHandler={(value) => setLocation(value)}>
-                                        <option disabled selected>Select Closest BlackBells to you</option>
-                                        <option value="ikeja">Ikeja</option>
-                                        <option value="lekki">Lekki</option>
-                                    </SelectDropdown>
+                            <div className="d-flex align-items-center flex-md-nowrap flex-wrap">
+                                <div className="d-flex align-items-center mb-3 mb-md-0 options">
+                                    <div className="select d-flex align-items-center">
+                                        <SelectDropdown img={require(`../../assets/images/location.svg`)} value={location} changeHandler={(value) => setLocation(value)}>
+                                            <option disabled selected>Select Closest BlackBells to you</option>
+                                            <option value="ikeja">Ikeja</option>
+                                            <option value="lekki">Lekki</option>
+                                        </SelectDropdown>
+                                    </div>
+                                    <div className="delivery-time">
+                                        <SelectDropdown img={require(`../../assets/images/time.svg`)} value={time} changeHandler={(value) => setTime(value)}>
+                                            <option value="now">Deliver now</option>
+                                            <option value="later">Deliver later</option>
+                                        </SelectDropdown>
+                                    </div>
                                 </div>
-                                <div className="delivery-time">
-                                    <SelectDropdown img={require(`../../assets/images/time.svg`)} value={time} changeHandler={(value) => setTime(value)}>
-                                        <option value="now">Deliver now</option>
-                                        <option value="later">Deliver later</option>
-                                    </SelectDropdown>
-                                </div>
+                               
                                 <p className="button get-food mb-0">Get Food</p>
                             </div>
                         </div>

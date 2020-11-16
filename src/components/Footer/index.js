@@ -14,6 +14,9 @@ const Wrapper = styled.footer`
         bottom:0;
         background-position:cover;
     }
+    .top{
+        margin-bottom:70px;
+    }
     h4{
         a{
             font-style: normal;
@@ -24,7 +27,6 @@ const Wrapper = styled.footer`
         }
     }
     .download-app{
-        margin-bottom:70px;
         .appstore{
             margin-right:32px;
         }
@@ -41,7 +43,7 @@ const Wrapper = styled.footer`
                 list-style:none;
                 margin-right:45px;
                 a{
-                    font-weight: normal;
+                    font-weight: 300;
                     font-size: 16px;
                     line-height: 108.3%;
                     color: #FFFFFF;
@@ -53,17 +55,32 @@ const Wrapper = styled.footer`
     .socials{
         ul{
             li{
-                margin-right:10px;
+                margin-right:15px;
                 list-style:none;
                 img{
                     width:22px;
                 }
+
+                .facebook{
+                    width:11px;
+                }
+                .twiiter{
+                    width:22px;
+                }
+                .instagram{
+                    width:20px;
+                }
             }
         }
     }
-@media (max-width:500px){
-    
-}
+    @media (max-width:500px){
+        .download-app .appstore {
+            margin-right: 5px;
+        }
+        .top {
+            margin-bottom: 30px;
+        }
+    }
 `;
 
 
@@ -74,51 +91,57 @@ export default function Index() {
 
             </div>
             <div className="container">
-                <div className="row align-items-center">
-                    <div className="col-lg-6">
-                        <h4><Link to="">Blackpeppereats</Link></h4>
+                <div className="row align-items-center top">
+                    <div className="col-lg-6 mb-3 mb-lg-0">
+                        <h4 className="mb-0"><Link to="">Blackpeppereats</Link></h4>
                     </div>
 
-                    <div className="col-lg-6 d-flex justify-content-end download-app">
+                    <div className="col-lg-6   d-flex justify-content-lg-end download-app ">
                         <Link to="/" className="appstore">
                             <AppStore type="Appstore" alternate/>
                         </Link>
-                        <Link to="/">
+                        <Link to="/" className="pr-md-4 d-block">
                             <AppStore type="Playstore" alternate/>
                         </Link>
                     </div>
 
                 </div>
 
-                <div className="row align-items-center">
-                    <div className="col-lg-4">
+                <div className="row align-items-center flex-column-reverse flex-column flex-md-row ">
+                    <div className="col-md-4">
                         <p className="mb-0 copyright">© 2020 Blackpepper</p>
                     </div>
 
-                    <div className="col-lg-4 d-flex justify-content-center links">
-                        <ul className="p-0 m-0 d-flex align-items-center">
-                            <li className=""><Link to="">Legals</Link></li>
-                            <li className=""><Link to="">Legals</Link></li>
-                            <li className=""><Link to="">Legals</Link></li>
-                        </ul>
+                    <div className="col-md-8 mb-3 mb-md-0">
+                        <div className="row">
+                            <div className="col-lg-6 col-md-8 d-flex justify-content-md-center links mb-3 mb-md-0">
+                                <ul className="p-0 m-0 d-flex align-items-center">
+                                    <li className=""><Link to="">Legals</Link></li>
+                                    <li className=""><Link to="">Legals</Link></li>
+                                    <li className=""><Link to="">Legals</Link></li>
+                                </ul>
+                            </div>
+
+                            <div className="col-lg-6  col-md-4 d-flex justify-content-md-end socials">
+                                <ul className="m-0 p-0 d-flex align-items-center">
+                                    <li className="first">
+                                        <a href=""><img src={require(`../../assets/images/facebook.svg`)} alt="" className="facebook"/></a>
+                                    </li>
+                                    <li className="">
+                                        <a href=""><img src={require(`../../assets/images/twitter.svg`)} alt="" className="twitter"/></a>
+                                    </li>
+                                    <li className="">
+                                        <a href=""><img src={require(`../../assets/images/instagram.svg`)} alt="" className="instagram"/></a>
+                                    </li>
+                                    <li className="">
+                                        <a href=""><img src={require(`../../assets/images/youtube.svg`)} alt="" className="youtube"/></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="col-lg-4 d-flex justify-content-end socials">
-                        <ul className="m-0 p-0 d-flex align-items-center">
-                            <li className="">
-                                <a href=""><img src={require(`../../assets/images/facebook.svg`)} alt="" className=""/></a>
-                            </li>
-                            <li className="">
-                                <a href=""><img src={require(`../../assets/images/twitter.svg`)} alt="" className=""/></a>
-                            </li>
-                            <li className="">
-                                <a href=""><img src={require(`../../assets/images/instagram.svg`)} alt="" className=""/></a>
-                            </li>
-                            <li className="">
-                                <a href=""><img src={require(`../../assets/images/youtube.svg`)} alt="" className=""/></a>
-                            </li>
-                        </ul>
-                    </div>
+                    
                 </div>
             </div>
 

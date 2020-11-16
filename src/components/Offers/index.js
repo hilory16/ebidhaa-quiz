@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import Slider from "react-slick";
 
 const Wrapper = styled.div`
-    height:384px;
-    overflow:hidden;
     .slick-initialized .slick-slide{
         // width:fit-content !important;
     }
@@ -24,13 +22,59 @@ const Wrapper = styled.div`
             font-size: 32px;
             line-height: 48px;
             color: #FFFFFF;
+            margin-bottom:0;
+        }
+    }
+    @media (max-width:991px){
+        height:300px;
+        .offer-item .image{
+            height:300px;
+        }
+    }
+    @media (max-width:767px){
+        height:240px;
+        .offer-item .image{
+            height:240px;
+            padding:0 30px 30px 30px;
+        }
+        .offer-item h6{
+            font-size: 28px;
+            line-height: 36px;
+        }
+    }
+    @media (max-width:500px){
+        height:180px;
+        .offer-item .image{
+            height:180px;
+            border-radius: 20px;
+        }
+        .offer-item h6{
+            font-size: 24px;
+            line-height: 34px;
+        }
+        
+    }
+    @media (max-width:400px){
+        height:160px;
+        .offer-item .image{
+            height:160px;
+            padding:20px 30px 20px 30px;
+        }
+    }
+
+    @media (max-width:370px){
+        height:160px;
+        .offer-item .image{
+            padding:20px 20px 20px 20px;
+            font-size: 22px;
+            line-height: 30px;
         }
     }
 `
 
 export default class Index extends Component {
     settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 1,

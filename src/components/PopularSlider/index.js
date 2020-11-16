@@ -7,6 +7,9 @@ const Wrapper = styled.div`
     .popular-slider{
         padding-right:0 !important;
     }
+    @media (max-width:1168px){
+        
+    }
 `;
 
 export default class Index extends Component {
@@ -45,7 +48,7 @@ export default class Index extends Component {
             <Wrapper>
                 <div className="container">
                     <div className={`${this.props.mini ? 'd-none' : `d-flex`} justify-content-between align-items-center heading`}>
-                        <h3 className="mb-0">What’s Popular?</h3>
+                        <h3 className="mb-0 mr-3">What’s Popular?</h3>
                         <div className="d-flex slider-arrows">
                             <div><img src={require(`../../assets/images/arrow-left.svg`)} alt="" className="arrow-left" onClick={this.previous}/></div>
                             <div><img src={require(`../../assets/images/arrow-right.svg`)} alt="" className="arrow-right" onClick={this.next}/></div>

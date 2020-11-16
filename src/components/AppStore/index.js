@@ -25,6 +25,35 @@ const Wrapper = styled.div`
         line-height: 108.3%;
         margin-bottom:8px;
     }
+    @media (max-width:1168px){
+        h6 {
+            font-size: 22px;
+        }
+        .circle {
+            width: 32px;
+            height: 32px;
+            margin-right: 16px;
+        }
+    }
+    @media (max-width:500px){
+        padding:0 10px;
+        height:58px;
+        h6 {
+            font-size: 20px;
+        }
+        .circle {
+            width: 28px;
+            height: 28px;
+            margin-right: 12px;
+        }
+    }
+    @media (max-width:340px){
+        .circle {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+    }
 `;
 
 export default function Index({type,alternate}) {

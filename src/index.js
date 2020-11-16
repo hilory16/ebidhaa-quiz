@@ -20,7 +20,6 @@ ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
         <Routes/>
     </Provider>
-    // <Routes/>
     ,
     document.getElementById('root')
 );
