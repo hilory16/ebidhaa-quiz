@@ -1,17 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-    .slick-dots li button:before {
-        color: #fff !important;
-        opacity:.6;
-    }
-    .slick-dots li.slick-active button:before{
-        opacity:.35;
-       
-    }
-    .slick-dots {
-        bottom: -70px;
-    }
+   
     .program-desc{
         font-family: Lato;
         font-weight: 900;
@@ -49,9 +39,7 @@ export const Wrapper = styled.div`
                 }
             }
         }
-        .popular-slider{
-            padding-right:0 !important;
-        }
+        
     }
     .categories{
         .heading{
@@ -82,6 +70,11 @@ export const Wrapper = styled.div`
             :hover{
                 background-size:125%;
             }
+        }
+    }
+    .offers{
+        .heading{
+            margin-bottom:37px;
         }
     }
     .download{

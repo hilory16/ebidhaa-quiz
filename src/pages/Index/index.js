@@ -8,76 +8,37 @@ import Footer from '../../components/Footer';
 import 'react-toastify/dist/ReactToastify.css';
 import Slider from "react-slick";
 import FoodItem from '../../components/FoodItem';
+import PopularSlider from '../../components/PopularSlider'
 import AppStore from '../../components/AppStore';
 import Offers from '../../components/Offers'
 export default class Index extends Component {
-    constructor(props) {
-        super(props);
-        this.next = this.next.bind(this);
-        this.previous = this.previous.bind(this);
-    }
-    next() {
-        this.slider.slickNext();
-    }
-    previous() {
-        this.slider.slickPrev();
-    }
-    settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        initialSlide: 0,
-        arrows:false,
-        autoplay: true,
-        speed: 1000,
-        autoplaySpeed: 2000,
-        variableWidth:true,
-        // responsive: [
-        //     {
-        //         breakpoint: 1200,
-        //         settings: {
-        //           slidesToShow: 3,
-        //           slidesToScroll: 1,
-        //           infinite: true,
-        //           dots: true
-        //         }
-        //     },
-        //   {
-        //     breakpoint: 1024,
-        //     settings: {
-        //       slidesToShow: 3,
-        //       slidesToScroll: 3,
-        //       infinite: true,
-        //       dots: true
-        //     }
-        //   },
-        //   {
-        //     breakpoint: 991,
-        //     settings: {
-        //       slidesToShow: 2,
-        //       slidesToScroll: 2,
-        //       initialSlide: 2
-        //     }
-        //   },
-        //   {
-        //     breakpoint: 600,
-        //     settings: {
-        //       slidesToShow: 2,
-        //       slidesToScroll: 2,
-        //       initialSlide: 2
-        //     }
-        //   },
-        //   {
-        //     breakpoint: 480,
-        //     settings: {
-        //       slidesToShow: 1,
-        //       slidesToScroll: 1
-        //     }
-        //   }
-        // ]
-      };
+    data =[
+        {
+            img:require('../../assets/images/beef.jpg'),
+            heading:"Jollof Rice & Beef",
+            desc:"Same as our regular Jollof rice but Meatier. Perfect for a large party.",
+            price:"4,670.00"
+        },
+        {
+            img:require('../../assets/images/chicken.jpg'),
+            heading:"Jollof Rice & Chicken-in-Stew",
+            desc:"Same as our regular Jollof rice but Meatier. Perfect for a large party.",
+            price:"5,670.00"
+        },
+        {
+            img:require('../../assets/images/spag.jpg'),
+            heading:"Spaghetti & Barbeque chicken",
+            desc:"Same as our regular Jollof rice but Meatier. Perfect for a large party.",
+            price:"6,670.00"
+        },
+        {
+            img:require('../../assets/images/rice.jpg'),
+            heading:"Chinese Rice & Beef",
+            desc:"Same as our regular Jollof rice but Meatier. Perfect for a large party.",
+            price:"7,670.00"
+        }
+    ]
+    
     render(){
         return (
             <div>
@@ -85,47 +46,7 @@ export default class Index extends Component {
                     {/* <Header/> */}
                     <Banner/>
                     <section className="popular">
-                        <div className="container">
-                            <div className="d-flex justify-content-between align-items-center heading">
-                                <h3 className="mb-0">What’s Popular?</h3>
-                                <div className="d-flex slider-arrows">
-                                    <div><img src={require(`../../assets/images/arrow-left.svg`)} alt="" className="arrow-left" onClick={this.previous}/></div>
-                                    <div><img src={require(`../../assets/images/arrow-right.svg`)} alt="" className="arrow-right" onClick={this.next}/></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="container popular-slider pr-0">
-                            <Slider ref={c => (this.slider = c)} {...this.settings}>
-                                <FoodItem data={{
-                                    img:require('../../assets/images/beef.jpg'),
-                                    heading:"Jollof Rice & Beef",
-                                    desc:"Same as our regular Jollof rice but Meatier. Perfect for a large party.",
-                                    price:"4,670.00"
-                                }}/>
-
-                                <FoodItem data={{
-                                    img:require('../../assets/images/chicken.jpg'),
-                                    heading:"Jollof Rice & Chicken-in-Stew",
-                                    desc:"Same as our regular Jollof rice but Meatier. Perfect for a large party.",
-                                    price:"5,670.00"
-                                }}/>
-
-                                <FoodItem data={{
-                                    img:require('../../assets/images/spag.jpg'),
-                                    heading:"Spaghetti & Barbeque chicken",
-                                    desc:"Same as our regular Jollof rice but Meatier. Perfect for a large party.",
-                                    price:"6,670.00"
-                                }}/>
-
-                                <FoodItem data={{
-                                    img:require('../../assets/images/rice.jpg'),
-                                    heading:"Chinese Rice & Beef",
-                                    desc:"Same as our regular Jollof rice but Meatier. Perfect for a large party.",
-                                    price:"7,670.00"
-                                }}/>
-
-                            </Slider>
-                        </div>
+                        <PopularSlider data={this.data}/>
                     </section>
 
                     <section className="categories">
@@ -197,16 +118,19 @@ export default class Index extends Component {
                         </div>
                     </section>
 
-                    <section className="pt-0">
+                    <section className="pt-0 offers">
                         <div className="heading container">
                             <h3 className="mb-0">Offers</h3>
                         </div>
-                        <div>
-                            <Offers/>
-                        </div>
+                        <Offers/>
+                        
                     </section>
 
-                    {/* <Footer/> */}
+                    <section className="">
+                        <PopularSlider data={this.data} mini/>
+                    </section>
+
+                    <Footer/>
                     
                 </UI.Wrapper>
             </div>

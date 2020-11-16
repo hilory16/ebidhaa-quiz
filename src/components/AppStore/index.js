@@ -9,7 +9,6 @@ const Wrapper = styled.div`
     padding:0 15px;
     .circle{
         border-radius:50%;
-        background: #F2F2F2;
         width:34px;
         height:34px;
         margin-right:19.5px;
@@ -18,25 +17,23 @@ const Wrapper = styled.div`
         font-weight: normal;
         font-size: 12px;
         line-height: 108.3%;
-        color: #F2F2F2;
         padding-left:3px;
     }
     h6{
         font-weight: 500;
         font-size: 24px;
         line-height: 108.3%;
-        color: #F2F2F2;
         margin-bottom:8px;
     }
 `;
 
-export default function Index({type}) {
+export default function Index({type,alternate}) {
     return (
-        <Wrapper className="store appstore d-flex align-items-center">
+        <Wrapper className="store appstore d-flex align-items-center" style={{background:alternate ? '#DADADA' :'#000000'}}>
             <div>
                 <div className="d-flex align-items-center">
-                    <div className="circle"></div>
-                    <div>
+                    <div className="circle" style={{background:alternate ? '#000' :'#F2F2F2'}}></div>
+                    <div className="text" style={{color:alternate ? '#000' :'#F2F2F2'}}>
                         <p className="mb-0">Get on the</p>
                         <h6 className="">{type}</h6>
                     </div>
